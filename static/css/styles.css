@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+::root {
+  --lime: rgb(39, 167, 39);
+  --red: rgb(157, 21, 21);
+  --blue: rgb(2, 151, 214);
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #292929;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto Mono", monospace;
+}
+
+.title {
+  display: flex;
+  cursor: default;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading{
+  display: flex;
+}
+.name {
+  color: rgb(4, 157, 4);
+  font-size: 5rem;
+  font-weight: 400;
+}
+
+.blinking-cursor {
+  color: rgb(2, 151, 214);
+  animation: blink 1s step-end infinite;
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+@keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: rgb(2, 151, 214);
+  }
+}
+
+.link-row {
+  display:flex;
+  justify-content: space-around;
+}
+
+a {
+  text-decoration: none;
+  padding-bottom: 5px;
+  color: lime;
+}
+h3 {
+  color: lime;
+}
+
+.hidden {
+  color:rgb(2, 151, 214) ;
+  opacity: 0;
+  transition: 0.2s ease;
+}
+
+.link-row h3:hover .hidden {
+  opacity: 1;
+  margin-right: 8px;
+}
+.link-row h3:hover a {
+  text-decoration: underline;
+}
